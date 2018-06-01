@@ -1,0 +1,55 @@
+JavaScript的三种函数类型：
+	{
+		1、函数声明式创建的函数
+			function example(){  }     调用： example();
+		2、函数表达式创建的函数
+			var foo = function(){ };   调用： foo();
+		3、函数构造器创建的函数
+			var myfunc = new Function ('x', 'y', 'alert(x+y)');  
+			等价于
+			function myfunction(x, y){
+		  		alert(x+y);
+			}
+
+		区别：
+			三种方式的区别，可以从作用域、效率以及加载顺序来区分。
+			1、从作用域上来说，函数声明式和函数直接量使用的是局部变量，而 Function()构造函数却是全局变量；
+			2、执行效率上来说，Function()构造函数的效率要低于其他两种方式，尤其是在循环体中，因为构造函数每执行一次都要重新编译，并且生成新的函数对象；
+			3、加载顺序，function 方式(即函数声明式)是在 JavaScript 编译的时候就加载到作用域中,而其他两种方式则是在代码执行的时候加载，如果在定义之前调用它，则会返回 undefined：
+		
+	}
+
+JavaScript的对象
+	{
+		1、字面量形式
+			var obj1 = {
+			    name: "obj1",
+			    fuc: function () { alert("OK"); }
+    		}
+
+    	2、创建Object实例
+    		ar obj2 = new Object();
+			obj2.name = "obj2",
+			obj2.fuc = function () { alert("OK"); };
+
+		3、构造函数定义
+			function Obj3() {
+    			this.name = "obj3",
+    			this.fuc = function () { alert("OK"); };
+			}
+
+		4、原型方式
+			function Obj4() { }
+			Obj4.prototype.name = "obj4",
+			Obj4.prototype.fuc = function () {  alert("OK"); };
+		
+	}
+
+
+
+每个函数function都有一个prototype，即原型；这个prototype的属性值是一个对象（属性的集合，再次强调！），默认的只有一个叫做constructor的属性，指向这个函数本身。
+每个对象都有一个__proto__，可成为隐式原型，指向 创建该对象的函数(即构造函数) 的prototype。
+
+
+
+

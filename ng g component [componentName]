@@ -1,0 +1,16 @@
+创建component: ng g component [componentName]
+创建Service: ng g service [serviceName]
+
+前端TDD 
+1、写Html --> 写测试用例--> 写ts
+
+angular 规范：
+1、 export  class BookComponent implentments Oninit{
+
+     constructor(){}   // 构造函数中属性初始化
+
+     ngOnInit(){}   // 后台取数的初始化
+	
+}
+
+2、（） 代表输出  [] 代表输入
